@@ -71,4 +71,23 @@ router.get('/api/getInfo/:attribute', function(req, res, next) {
   });
 });
 
+// working hardcoded DAPI RPC call to v13 dashd
+router.get('/api/dapi_command/invite_user/', function(req, res, next) {
+    var obj = new Object;
+    obj.object = "dapi_command";
+    obj.data = new Object;
+    obj.data.command = "invite_user";
+    obj.data.from_uid = "dashevolution";
+    obj.data.to_uid = "testuser";
+    obj.data.to_name = "";
+    obj.data.to_email = "testuser1@dash.org";
+    obj.data.to_pubkey = "";
+    obj.data.signature = "";
+
+    client.dapi(JSON.stringify(obj), function(err, info, resHeaders) {
+     if (err) return console.log(err);
+     res.json(obj); // server response
+     });
+});
+
 module.exports = router;
