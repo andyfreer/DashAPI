@@ -1,0 +1,14 @@
+{
+  "server": {
+        "rpc": {
+            "host": "localhost",
+            "port": "9998",
+            "user": "dashrpc",
+            "pass": "71PXiDZoHNfEdhdN3urucLVAUWYyzNHNeBMdkGf6483f",
+            "timeout": "30000"
+       },
+        "api": {
+            "port": 3001
+        }
+    },"client":{}
+}
